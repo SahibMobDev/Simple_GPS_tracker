@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.simplegpstracker.databinding.ActivityMainBinding
+import com.example.simplegpstracker.fragments.MainFragment
+import com.example.simplegpstracker.fragments.SettingsFragment
+import com.example.simplegpstracker.fragments.TracksFragment
+import com.example.simplegpstracker.utils.openFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -12,19 +16,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         onBottomNavClick()
+        openFragment(MainFragment.newInstance())
     }
 
     private fun onBottomNavClick() {
         binding.bNav.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.id_home -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                    openFragment(MainFragment.newInstance())
                 }
                 R.id.id_tracks -> {
-                    Toast.makeText(this, "Tracks", Toast.LENGTH_SHORT).show()
+                    openFragment(TracksFragment.newInstance())
                 }
                 R.id.id_settings -> {
-                    Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+                    openFragment(SettingsFragment.newInstance())
                 }
             }
             true
