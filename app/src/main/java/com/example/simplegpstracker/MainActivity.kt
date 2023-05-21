@@ -2,7 +2,6 @@ package com.example.simplegpstracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.simplegpstracker.databinding.ActivityMainBinding
 import com.example.simplegpstracker.fragments.MainFragment
 import com.example.simplegpstracker.fragments.SettingsFragment
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     openFragment(TracksFragment.newInstance())
                 }
                 R.id.id_settings -> {
-                    openFragment(SettingsFragment.newInstance())
+                    openFragment(SettingsFragment())
                 }
             }
             true
