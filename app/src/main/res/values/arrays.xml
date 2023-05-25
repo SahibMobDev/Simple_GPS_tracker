@@ -11,4 +11,15 @@
         <item>10000</item>
     </string-array>
 
+    <string-array name="track_color_name">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Black</item>
+    </string-array>
+    <string-array name="track_color_value">
+        <item>#278EA7</item>
+        <item>#FF1A21</item>
+        <item>#FF000000</item>
+    </string-array>
+
 </resources>
