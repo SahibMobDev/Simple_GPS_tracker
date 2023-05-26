@@ -13,6 +13,11 @@ fun Fragment.openFragment(f: Fragment) {
 }
 
 fun AppCompatActivity.openFragment(f: Fragment) {
+
+    if (supportFragmentManager.fragments.isNotEmpty()) {
+        if (supportFragmentManager.fragments[0].javaClass == f.javaClass) return
+    }
+
     this.supportFragmentManager.beginTransaction()
         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
         .replace(R.id.placeHolder, f)
